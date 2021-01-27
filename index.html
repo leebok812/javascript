@@ -439,7 +439,7 @@
 
 
 
-                        <script> // 이벤트 기반의 프로그래밍 
+                        <!-- <script> // 이벤트 기반의 프로그래밍 
 
                                // <script> 는 페이지가 읽혀 질때 실행
                                 
@@ -456,7 +456,7 @@
                                 }
                         </script>
                 
-                   <!-- //<input onXXX=""/> 이벤트가 발생 할 때 실행 //) -->
+                          //<input onXXX=""/> 이벤트가 발생 할 때 실행 //)<br/><br/>
                    //1.
                    <input type ="button" value="클릭"  onclick="printResult();" />   <br/><br/>
 
@@ -465,11 +465,87 @@
 
                    //3.
                    <span onclick="alert('Hello');">스팬입니다.</span>  //=> 글자를 클릭하면 됨
-                 
-
-                
+                  -->
 
 
+
+
+
+                <script> // 문서의 엘리먼트 객체 이용하기  위의 강의의 연계  
+
+                                //1.
+                                        function printResult1()
+                                {
+        
+                                   var x = prompt("x 값을 입력하세요",0);
+                                   var y = prompt("y 값을 입력하세요",0);
+
+                                    x = parseInt(x);
+                                    y = parseInt(y);
+
+                                 // alert(x+y);
+                                btnPrint1.value =x+y;
+                                }
+                                //2.
+                                        function printResult2()
+                                {
+                                    
+                                   var x = prompt("x 값을 입력하세요",0);
+                                   var y = prompt("y 값을 입력하세요",0);
+
+                                        x = parseInt(x);
+                                        y = parseInt(y);
+
+                                         btnPrint2.value = x+y;
+                                }
+                                    btnPrint2.onclick = printResult2;
+                                //3.
+                                        function printResult3()
+                                {
+        
+                                   var x = prompt("x 값을 입력하세요",0);
+                                   var y = prompt("y 값을 입력하세요",0);
+
+                                    x = parseInt(x);
+                                    y = parseInt(y);
+
+                                 // alert(x+y);
+                                span.innerText = x+y; // span형태는 input 타입과 다르게 value라는 속성이 없다.
+                                }
+
+                                //4.
+                                        function printResult4()
+                                {
+        
+                                   //var x = prompt("x 값을 입력하세요",0);
+                                   //var y = prompt("y 값을 입력하세요",0);
+
+                                   // x = parseInt(x);
+                                   // y = parseInt(y);
+
+                                 // alert(x+y);
+                                //span.innerText = x+y; // span형태는 input 타입과 다르게 value라는 속성이 없다.
+                                    btnPrint4.type="text";
+                            }
+
+
+
+
+                </script>
+                     <!-- //<input onXXX=""/> 이벤트가 발생 할 때 실행 //<br/><br/>  -->
+                     //////주의할점은 id값이 똑같으면 오류 발생//////////<br/><br/><br/><br/>
+                    //1. 밑에 btnPrint 라는 버튼에 결과값이 박힌다. <br/><br/>
+                    <input type ="button" value="클릭"  onclick="printResult1();" id="btnPrint1" />   <br/><br/>
+                   
+                    //2. 1번을 좀 더 간소화 하는 방법 하지만 오류가 난다 이유는  btnPrint2.onclick = printResult2; 구문이 위에서 아래로 먼저 읽히면서 실행되기에 btnPrint2 is not defined을 발생 해결은 input구문이 스크립트보다 위에 있어야한다. <br/><br/>
+                    <input type ="button" value="클릭"  id="btnPrint2" />   <br/><br/>
+                    
+                    //3. printResult2와 연계하여 클릭 후 값 입력이 끝나면 글자가 결과값으로 변한다.<br/><br/>
+                    <input type ="button" value="클릭"  onclick="printResult3();" id="btnPrint3" />   <br/><br/>
+                    <span id="span" onclick="alert('Hello');">스팬입니다.</span>  //=> 글자를 클릭하면 Hello가 출력됨<br/><br/>
+
+                    //4. 함수설정으로인해  버튼의 타입 자체가 바뀌게 된다. <br/><br/>
+                    <input type ="button" value="클릭"  onclick="printResult4();" id="btnPrint4" />   <br/><br/>
 
 
 

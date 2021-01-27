@@ -200,7 +200,7 @@
 
 
 
-                <script> //자바스크립트 제어구조
+               <!--  <script> //자바스크립트 제어구조
 
 
                         // 참고 자료 https://developer.mozilla.org/ko/ <= 한국번역으로 쓸시 깨지는 경우 발생하므로 영어로 추천
@@ -223,9 +223,42 @@
 
 
                 </script>
+ -->
 
 
 
+
+                <script> //함수 객체와 표현식
+
+
+                    //1.
+                    var add =  new Function("x,y", "return x+y;");  // => 첫번째 ""는 인자 , 두번째 ""는 구현로직
+                    document.write(add(3,4)); // => 7
+
+
+                    document.write("<br />=====================<br />");
+
+
+                    //2.  이 방법을 제일 많이 씀
+                    var add =  function(a,b) {
+
+                        return a+b;
+                    };
+                    document.write(add(10,10)); // =>20
+
+                    document.write("<br />=====================<br />");
+
+                    //3.  
+                    function add(c,d){
+                        return c+d;
+                    }
+                    document.write(add(30,40));  // =>70
+
+
+
+
+
+                </script>
 
 
 

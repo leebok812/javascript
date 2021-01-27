@@ -228,7 +228,7 @@
 
 
 
-                <script> //함수 객체와 표현식
+             <!--    <script> //함수 객체와 표현식
 
 
                     //1.
@@ -258,7 +258,34 @@
 
 
 
+                </script> -->  
+
+
+
+                <script>  //함수의 가변인자 arguments 콜렉션
+                
+                
+                function add(x,y){
+
+                    alert(arguments.length); //6개가 전달 되었다고 나옴.
+                    alert(arguments[5]); //Hello 출력 
+                    
+                    alert(typeof arguments[5]); // String
+                    alert(typeof arguments[0]); // number
+                    
+
+                    return x + y;
+                }
+                document.write(add(6,5,5,6,7,"Hello"));
+                
+                
+                
+                
                 </script>
+
+
+
+
 
 
 

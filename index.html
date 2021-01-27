@@ -287,7 +287,7 @@
 
 
 
-                <script>   //변수의 가시영역과 global 객체 그리고 전역변수
+              <!--   <script>   //변수의 가시영역과 global 객체 그리고 전역변수
 
                     //1.
                         var a = 1;
@@ -336,7 +336,43 @@
                         alert(a) // => 1출력
 
 
+                </script> -->
+
+
+
+                <script> // 클로저(Closure)
+                
+                //1.
+                    function f1() {
+
+                        var a = 1; // 지역변수
+
+                        return a;
+
+                    }
+
+                            var a = f1();
+                            alert(a); // 1출력
+
+                //2.
+                    function f3(){
+                        var a = 7;
+
+                        return function f4(){
+                            return a ; // 위 f3의 var a를 갖고와서씀  그래서 f3이 닫지 못함.
+                        }
+
+                    }
+
+                    var f = f3();
+                    var d = f();
+                    alert(d); //7출력
+
+
+
+                
                 </script>
+
 
 
 

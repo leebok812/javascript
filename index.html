@@ -147,7 +147,7 @@
 
                 </script> -->
 
-
+<!-- 
                 <script>   //JSON파서를 이용한 파싱
 
 
@@ -171,7 +171,59 @@
 
 
 
+                </script> -->
+
+
+
+             <!--    <script > //자바 스크립트 연산자 - 기본적인거 제외
+
+
+                        var x = 3;
+                         var y = 3;
+
+
+                         //1. == : 자바스크립트에선 값을 비교 
+                            document.write(x==y);
+                            
+                         //2. === : 주소를 비교.   
+                            document.write(x===y); // => true가 나오게 된다 .  false가 나오기 위해선 var y = new Number(3);으로 해야함
+
+
+                        //3. 
+                        document.write(3.5+"2"); //=>3.52  숫자가 문자화됨
+                        document.write(3.5-"2"); //=> 1.5  문자가 숫자화됨 
+                        document.write(32>"4"); // true
+
+
+
+                </script> -->
+
+
+
+                <script> //자바스크립트 제어구조
+
+
+                        // 참고 자료 https://developer.mozilla.org/ko/ <= 한국번역으로 쓸시 깨지는 경우 발생하므로 영어로 추천
+
+                        var ar = ["hello", "hi", "greeting"];
+                        //for(var i = 0; i<ar.length; i++)
+                        for(var i in ar)
+                         { document.write(ar[i]+"<br />");  }
+                         
+                         document.write("=====================<br />");
+                         
+                         var ob = {id:1, title:"GOOD", writeId:"newlec"};
+                         for(var i in ob)
+                          { document.write(ob[i]+"<br />");  }
+                         
+
+
+
+
+
+
                 </script>
+
 
 
 

@@ -340,7 +340,7 @@
 
 
 
-                <script> // 클로저(Closure)
+                <!-- <script> // 클로저(Closure)
                 
                 //1.
                     function f1() {
@@ -371,6 +371,58 @@
 
 
                 
+                </script> -->
+
+
+
+
+
+
+                <script>  // window 플랫폼을 이용한 대화 parseInt , alert , prompt , comfirm
+
+                    //1.
+                    
+                    var x = prompt("x의 값을 입력하세요 ",0);
+                    var y = prompt("y의 값을 입력하세요 ",0);
+
+                    alert(x+y);  // 문자(열) 로 넘겨 받기에 계산이 되지 않고 ex) 34 이런식의 문자가 출력
+                    
+                    
+                    //2. 위의 문제를 해결 하기 위해 parseInt 사용.
+
+                    var a = prompt("a의 값을 입력하세요 ",0);
+                    var b = prompt("b의 값을 입력하세요 ",0);
+
+                     a = parseInt(a);
+                     b = parseInt(b);
+
+
+                    alert(a+b);  
+
+
+                    //3. 문자형태를 parseInt 할 경우 
+
+                    v= parseInt("abc"); 
+                    alert(v); // NaN  => Not a Number 출력 
+
+
+
+                    //4. 숫자+문자 형태를 parseInt 할 경우 
+
+                    H = parseInt("12ABC");
+                    alert(H); // 12 출력  뒤의 ABC를 자동 탈락 시킴 substring효과 
+
+
+                    //5. confirm 사용
+
+                   var answer = confirm("정말로 삭제하실 생각입니까? "); //confirm 확인/취소 제공. 
+                   if(answer){
+                       alert("삭제되었습니다.") // 참 즉, 확인을 선택할경우 alert활성
+                   }
+                   
+
+
+
                 </script>
 
 

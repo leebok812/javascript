@@ -539,7 +539,7 @@
 
 
 
-                            <script> // 코드 초기화와 엘리먼트 객체 선택하기  전 강의에서 2번에서 실행 순서로 인한 오류 문제 해결 하는 법
+                            <!-- <script> // 코드 초기화와 엘리먼트 객체 선택하기  전 강의에서 2번에서 실행 순서로 인한 오류 문제 해결 하는 법
 
                                         function printResult2()
                                 {
@@ -562,7 +562,40 @@
                                  window.onload =init;//=> function값을 넘길때는 괄호를 뺀다! | window가 로드완료되면 init을 호출해달라
                              </script>
                              밑에 btnPrint 라는 버튼에 결과값이 박힌다. <br/><br/>
-                                    <input type ="button" value="클릭"  id="btn-Print2" />   <br/><br/>
+                                    <input type ="button" value="클릭"  id="btn-Print2" />   <br/><br/> -->
+
+
+
+                    <script> //스크립트 코드의 지역화   전 강의했던것을 간소화 하기 
+
+                                 
+                                window.onload = function (){
+                                     var btnPrint = document.getElementById('btn-Print'); 
+                                   
+                                            var add =function(x,y){ // 이런식으로 안쪽에 추가 할 수도 있다. (지역화 시킴)
+                                                    return x + y;
+                                            };
+
+
+                                     btnPrint.onclick =  function ()  { //익명함수를 대입함. 이벤트 연계
+                                    
+                                    //var btnPrint = document.getElementById('btn-Print'); //위 init에서 준비했기에 또 따로 준비 할 필요가 없다.
+                                    
+                                    var x = prompt("x 값을 입력하세요",0);
+                                    var y = prompt("y 값을 입력하세요",0);
+                                    
+                                    x = parseInt(x);
+                                    y = parseInt(y);
+                                    
+                                    btnPrint.value = x+y;
+                                     };
+                                 }
+
+                                     </script>
+                                         밑에 btnPrint 라는 버튼에 결과값이 박힌다. <br/><br/>
+                                        <input type ="button" value="클릭"  id="btn-Print" />   <br/><br/> -->
+
+
 
 
 

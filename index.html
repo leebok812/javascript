@@ -83,7 +83,7 @@
 
                 </script> -->     <!-- JSON -->
 
-
+<!-- 
                     <script>
                             // var exam = new Object();
 
@@ -104,6 +104,47 @@
 
 
                     </script>
+ -->
+
+
+
+                <script>    //eval함수와 JSON 파싱하기
+
+                    var data =   '[\
+                                  {"co":0.6,"so2":0.004,"o3":0.02,"no2":0.024,"pm10":39,"msrdt_de":"20210127","pm25":24,"msrste_nm":"강남구"},\
+                                 {"co":1,"so2":0.003,"o3":0.016,"no2":0.032,"pm10":52,"msrdt_de":"20210127","pm25":22,"msrste_nm":"강남대로"},\
+                                {"co":0.6,"so2":0.003,"o3":0.018,"no2":0.028,"pm10":47,"msrdt_de":"20210127","pm25":29,"msrste_nm":"강동구"}\
+                                    ]';
+
+                                    
+                                    console.log(data[0].co);    //->undefined
+                                    
+                                    //1.
+                                    var a = 30;
+                                     console.log(a); //->30
+                                   
+                                   //2.
+                                     'var b = 30';
+                                    // console.log(b); //-b는 정의 되지 않았기에 오류가 나온다.
+                                
+                                
+                                    //3.  위와 같이 문자열로 처리된것을 실행하기 위한 것이 <eval>
+                                     eval('var b = 30;');
+                                     console.log(b); //->30
+                   
+                   
+                      //돌아와서 위의 var data를 실행시켜보자.
+
+                    eval("var ar = " +data+";"); 
+                    console.log(ar[0].co);
+
+
+
+                </script>
+
+
+
+
 
 
 

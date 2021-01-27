@@ -108,7 +108,7 @@
 
 
 
-                <script>    //eval함수와 JSON 파싱하기
+               <!--  <script>    //eval함수와 JSON 파싱하기
 
 
               //파싱(parsing)이란?
@@ -141,11 +141,39 @@
                       //돌아와서 위의 var data를 실행시켜보자.
 
                     eval("var ar = " +data+";"); 
-                    console.log(ar[0].co); //--> 0.6
+                    console.log(ar[0].co); //-> 0.6
+
+
+
+                </script> -->
+
+
+                <script>   //JSON파서를 이용한 파싱
+
+
+                    //1.
+                      var data = {id:1, title:"aaa"};
+                        console.log(data.title); //-> aaa
+                    
+                    //2.
+                        var data = {"n id":2, title:"bbb"};
+                        console.log(data["n id"]);  //->2
+                       
+                       
+                    //3.  
+                        var data = JSON.parse('{"id":3, "title":"ccc"}');  //parse 사용시 키값에 꼭 큰따옴표 처리해야함.
+                        console.log(data.title);  //->ccc
+
+                    //4.
+                        var data2 = {id:2, title:"bbb"};
+                        var json = JSON.stringify(data2);  //stringify는 3번 형태처럼 키 값에 따옴표 처리를  해준다 
+                        alert(json);
 
 
 
                 </script>
+
+
 
 
 

@@ -18,5 +18,5 @@ window.addEventListener("load", function(){
    y = parseInt(y);
    
    btnPrint.value = x+y;
-    };
+    }; 
 })

@@ -18,8 +18,8 @@
             
                 };
             });
-
-
+       
+ 
             //EX2 : 엘리먼트 선택방법 개선하기
             /* window.onload = function (){ onload의 중복으로 인해 변경 다른사람의 코드를 망가뜨리지 않으려면 addEventListener사용*/  
                 window.addEventListener("load", function(){

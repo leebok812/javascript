@@ -411,6 +411,7 @@
                                     /* window.onload = function (){ onload의 중복으로 인해 변경 다른사람의 코드를 망가뜨리지 않으려면 addEventListener사용*/
                                     window.addEventListener("load", function(){
                                         
+                                        // 강의내용에서는 id1과 id2dml title을 바꿔서 시연함.
                                         var notices = [
                                             {"id":1, "title":"자바스크립트란..", "regDate":"2019-02-05", "writerId":"newlec", "hit":2},
                                             {"id":2, "title":"유투브에 끌려다니지 않으려고 했는데....ㅜㅜ..", "regDate":"2019-02-02", "writerId":"newlec", "hit":0},

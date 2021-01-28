@@ -14,6 +14,6 @@ window.addEventListener("load", function(){
 
         txtSum.value = x+y; // 위에서 parseInt로 숫자화 한것을 다시 txtSum에 넣어줄때는 자동으로 문자화 된다.
 
-
+   
     };
 })

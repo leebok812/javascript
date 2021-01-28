@@ -352,3 +352,56 @@
                                       };
 
                                     });
+
+                                    //Ex11-다중 노드선택 방법과 일괄삭제, 노드의 자리바꾸기
+                                     /* window.onload = function (){ onload의 중복으로 인해 변경 다른사람의 코드를 망가뜨리지 않으려면 addEventListener사용*/ 
+                                    window.addEventListener("load", function(){
+
+                                        var section11 = document.querySelector("#section11");
+                                        
+                                        var noticeList =section11.querySelector(".notice-list"); // .은 클래스 #은 id 
+                                        var tbody = noticeList.querySelector("tbody");
+                                        var allCheckbox = section11.querySelector(".overall-checkbox");// .은 클래스 #은 id 
+                                        var delButton = section11.querySelector(".del-button");// .은 클래스 #은 id 
+                                        var swapButton = section11.querySelector(".swap-button");// .은 클래스 #은 id 
+
+                                        allCheckbox.onchange = function(){
+                                            
+                                            var inputs  = tbody.querySelectorAll("input[type='checkbox']");//tbody의 input중 type이 checkbox인거를 갖고 오겠다.
+                                            for(var i=0; i<inputs.length; i++){
+                                                  inputs[i].checked = allCheckbox.checked;
+                                                    }
+                                        };
+
+                                        delButton.onclick = function(){
+                                            var inputs = tbody.querySelectorAll("input[type='checkbox']:checked"); //체크된 대상만 갖고옴. checked로 인해
+                                           // console.log(inputs.length); // 선택한거 삭제 했을때 갯수보려고 만든거
+                                            // if(inputs[0].checked){} 
+
+                                            for(var i=0; i<inputs.length; i++){ //선택된 갯수만큼만 삭제 하기 
+                                                inputs[i].parentElement.parentElement.remove(); //두번 parentElement하는 이유 : input->td -> tr 결국 한 tr이 지워지는 효과
+                                            }
+
+
+                                        };
+
+                                        swapButton.onclick = function(){
+                                            var inputs = tbody.querySelectorAll("input[type='checkbox']:checked"); //체크된 대상만 갖고옴. checked로 인해
+                                            
+                                            if(inputs.length !=2){
+                                                alert("엘리먼트는 2개를 선택해야만 합니다.");
+                                                return;
+                                            }
+                                            
+                                            var trs = []; // 위 if문으로 인해 여기에는 2개가 담겨있다.
+                                            for(var i =0; i<inputs.length; i++){
+                                                trs.push(inputs[i].parentElement.parentElement);
+                                            }
+                                            //자바의 숫자 3개로 자리 바꾸기와 같다 temp 지정후 넣고 빼고 
+                                            var  cloneNode = trs[0].cloneNode(true); //선택한 첫번째 대상trs[0]을 cloneNode 삽입
+                                            trs[1].replaceWith(cloneNode); // 선택한 두번째 대상 trs[1]을 cloneNode와 바꿈
+                                            trs[0].replaceWith(trs[1]);// 선택한 첫번째 대상 trs[0]을 trs[1]과 바꿈
+
+                                        };
+
+                                    });

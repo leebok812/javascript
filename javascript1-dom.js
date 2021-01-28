@@ -245,5 +245,62 @@
                                 };
                               
                         
+
+
+
+                        
+                        });
+
+                         //EX9 :   노드 복제와 템플릿(template)복제 태그
+                    /* window.onload = function (){ onload의 중복으로 인해 변경 다른사람의 코드를 망가뜨리지 않으려면 addEventListener사용*/ 
+                        window.addEventListener("load", function(){
+                            var notices = [
+                                {id:5, title:"퐈이야~~~", regDate:"2019-01-26", writerId:"newlec", hit:0},
+                                {id:6, title:"나 좀 복제해줘~", regDate:"2019-01-26", writerId:"newlec", hit:17}
+                            ];
+                        
+                            var section9 = document.querySelector("#section9");
+                            
+                            var noticeList =section9.querySelector(".notice-list"); // .은 클래스 #은 id 
+                            var tbodyNode = noticeList.querySelector("tbody");
+                            var cloneButton = section9.querySelector(".clone-button");// .은 클래스 #은 id 
+                            var templateButton = section9.querySelector(".template-button");// .은 클래스 #은 id 
+                        
+                            cloneButton.onclick = function(){
+                                
+                                var trNode = noticeList.querySelector("tbody tr"); //querySelector는 괄호 내용중 첫번째만 갖고온다. 
+                                var cloneNode = trNode.cloneNode(true); // false로 하게 되면 trNode(여기서 명시되 있는)라는 껍데기만 갖고 온다. ||true일경우 trNode가 갖고있는 자식 노드 자식의자식노드 모든것을 갖고온다.
+                               var tds = cloneNode.querySelectorAll("td"); //td들을 tds에 넣겠다는 말
+                               tds[0].textContent = notices[0].id;
+                               tds[1].innerHTML = '<a href="'+notices[0].id+'">'+notices[0].title+'</a>';
+                               tds[2].textContent = notices[0].regDate;
+                               tds[3].textContent = notices[0].writerId;
+                               tds[4].textContent = notices[0].hit;
+                               
+                               tbodyNode.append(cloneNode);
+                            };
+                        
+                            templateButton.onclick = function(){
+                                
+                                var template = section9.querySelector("template");
+                           
+                                var cloneNode = document.importNode(template.content, true); // template의 껍데기 뿐만 아니라 내용까지도 다 갖고 오겠다. cloneNode의 true와 같음
+                                var tds = cloneNode.querySelectorAll("td"); //td들을 tds에 넣겠다는 말
+                                tds[0].textContent = notices[0].id;
+                               //1번째 표현법 tds[1].innerHTML = '<a href="'+notices[0].id+'">'+notices[0].title+'</a>';
+                                
+                               //2번째 표현법
+                                var aNode = tds[1].children[0];
+                                aNode.href=notices[0].id;
+                                aNode.textContent =notices[0].title;
+                                
+                                
+                                tds[2].textContent = notices[0].regDate;
+                                tds[3].textContent = notices[0].writerId;
+                                tds[4].textContent = notices[0].hit;
+                                
+                                tbodyNode.append(cloneNode);
+                           
+                            };
                         
                         });

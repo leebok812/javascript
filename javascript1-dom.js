@@ -405,3 +405,71 @@
                                         };
 
                                     });
+
+
+                                    //Ex12-클릭한 컬럼을 기준으로 레코드 정렬하기 #1
+                                    /* window.onload = function (){ onload의 중복으로 인해 변경 다른사람의 코드를 망가뜨리지 않으려면 addEventListener사용*/
+                                    window.addEventListener("load", function(){
+                                        
+                                        var notices = [
+                                            {"id":1, "title":"자바스크립트란..", "regDate":"2019-02-05", "writerId":"newlec", "hit":2},
+                                            {"id":2, "title":"유투브에 끌려다니지 않으려고 했는데....ㅜㅜ..", "regDate":"2019-02-02", "writerId":"newlec", "hit":0},
+                                            {"id":3, "title":"기본기가 튼튼해야....", "regDate":"2019-02-01", "writerId":"newlec", "hit":1},
+                                            {"id":4, "title":"근데 조회수가 ㅜㅜ..", "regDate":"2019-01-25", "writerId":"newlec", "hit":0}
+                                        ];
+
+                                        var section12 = document.querySelector("#section12");// .은 클래스 #은 id 
+                                        
+                                        var noticeList =section12.querySelector(".notice-list");// .은 클래스 #은 id 
+                                        var titldTd = section12.querySelector(".title");// .은 클래스 #은 id 
+                                        var tbodyNode = noticeList.querySelector("tbody");
+
+                                        var bindData = function(){
+                                            var template = section12.querySelector("template");
+
+                                            for(var i=0; i<notices.length; i++){
+                                                var cloneNode = document.importNode(template.content, true);
+                                                var tds = cloneNode.querySelectorAll("td");
+                                                tds[0].textContent = notices[i].id;            
+
+                                                var aNode = tds[1].children[0];
+                                                aNode.href=notices[i].id;
+                                                aNode.textContent = notices[i].title;
+
+                                                tds[2].textContent = notices[i].regDate;
+                                                tds[3].textContent = notices[i].writerId;
+                                                tds[4].textContent = notices[i].hit;
+
+                                                tbodyNode.appendChild(cloneNode);
+                                            }
+                                        };
+
+                                        bindData();
+
+                                        var titleSorted = false; // 일부로 정렬이 되지 않은 상태로 만듬 
+
+                                        titldTd.onclick = function(){ //titldTd 즉, 제목을 클릭할경우 일어나는 이벤트
+                                            // 참고
+                                            //https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+                                            //오름차순
+                                            tbodyNode.innerHTML = ""; // 글자 클릭시 생성되지 않게 해주면서 배열 정리 해주는것. 
+
+                                        if(!titleSorted){
+                                            notices.sort(function(a,b){
+                                                titleSorted = true; // 이 함수가 실행되면 정렬되었습니다~를 나타냄  
+                                                if(a.title < b.title){ //제목으로 비교 
+                                                    return -1;
+
+                                                }else if(a.title > b.title){
+                                                return 1;
+                                                }else{
+                                                return 0;
+                                                }
+                                            });
+                                        }else{
+                                            notices.reverse(); // 순서상 위에서 정렬된 것을 정반대로 뒤집는것
+                                        }
+                                            bindData();
+
+                                        };
+                                    });

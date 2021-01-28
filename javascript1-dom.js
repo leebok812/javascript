@@ -149,3 +149,31 @@
                         
                         
                         });
+
+                         //EX7 : EX7 : 노드조작: 메뉴추가(createTextNode, Element)
+                    /* window.onload = function (){ onload의 중복으로 인해 변경 다른사람의 코드를 망가뜨리지 않으려면 addEventListener사용*/  
+                        window.addEventListener("load", function(){
+                            var section7=document.querySelector("#section7"); // .은 클래스 #은 id 
+                        
+                            var titleInput = section7.querySelector(".title-input");// .은 클래스 #은 id 
+                            var menuListDiv = section7.querySelector(".menu-list");// .은 클래스 #은 id 
+                            var addButton = section7.querySelector(".add-button");// .은 클래스 #은 id 
+                            var delButton= section7.querySelector(".del-button");// .은 클래스 #은 id 
+
+                                addButton.onclick = function(){ 
+
+                                        var title = titleInput.value;
+                                        var txtNode = document.createTextNode(title);
+                                        menuListDiv.appendChild(txtNode);
+                                };
+                               
+                                delButton.onclick = function(){ 
+                                    var txtNode = menuListDiv.childNodes[0]; // 예를 위하여 이렇게 작성했지만 이렇게는 거의 쓰지 않는다.
+                                    menuListDiv.removeChild(txtNode);
+
+
+                                };
+                              
+                        
+                        
+                        });

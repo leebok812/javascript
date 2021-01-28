@@ -1,625 +1,625 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css" type="text/css" media="screen">
-    <script src="main.js"></script>
-    <title>Page Title</title>
-</head>
-<body>
-   <!--  <script> //데이터 객체와 wrapper 클래스 
-       var x = new Number(3);
-       /* var x = 3;   위에와 완전히 동일하다  */
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="main.css" type="text/css" media="screen">
+            <script src="main.js"></script>
+            <title>Page Title</title>
+        </head>
+        <body>
+        <!--  <script> //데이터 객체와 wrapper 클래스 
+            var x = new Number(3);
+            /* var x = 3;   위에와 완전히 동일하다  */
 
-        var y = 4;
-
-
-        var z; 
-
-        /* alert(x+y); = 7 */
-
-           /*  alert(z); = z에 아무 값도 없이 출력하면 undefined */
-
-        
+                var y = 4;
 
 
-    </script> -->
+                var z; 
+
+                /* alert(x+y); = 7 */
+
+                /*  alert(z); = z에 아무 값도 없이 출력하면 undefined */
+
+                
 
 
-  <!--   <script> //배열의 생성과 사용
+            </script> -->
 
 
-            var nums = new Array();
-
-          nums[3] = 57;
-
-        console.log(nums);
+        <!--   <script> //배열의 생성과 사용
 
 
+                    var nums = new Array();
 
+                nums[3] = 57;
 
-    </script> -->
-
-
-         <!-- <script> // 배열의 초기화와 조작하기 
-
-                        var nums = new Array(2,3,"hello", 7);
-                        
-                       
-                             console.log(nums); // 2,3,hello,7 출력 
-
-                                        /* splice는 삭제 대체 삽입이 가능 */
-                             nums.splice(2,1,"hoho");  /* 두번째에서 하나를 지우고 "hoho"를 추가  */
-                       
-                             console.log(nums); // 2,3,hoho,7 출력
-                       
-                             nums.splice(2,0,"haha");  /* 두번째에서 0개를  지우고(지워지는것이 없음) "haha"를 추가  위에서 hoho가 있으므로  hoho가 다음으로 밀리고 두번째에 haha가 들어간다.*/
-                       
-                       
-                            console.log(nums); // 2, 3, haha ,hoho ,7 출력 
+                console.log(nums);
 
 
 
 
-
-        </script>  -->
-
+            </script> -->
 
 
+                <!-- <script> // 배열의 초기화와 조작하기 
 
-
-      <!--            <script>   /* Object객체 */
-
-                            var exam = new Object();
-
-                           /*  exam["kor"]=100;
-                            exam["eng"]=40;
-                            exam["math"]=20;
-
-                            alert(exam["kor"]);
- */
-
-                            exam.kor = 30;
-                            exam.eng = 70;
-                            exam.math = 80;
-
-                            exam.Kor = 20; /* 잘보면 k가 대문자다  */
-                            console.log(exam.kor+exam.eng);
-
-
-
-
-                </script> -->     <!-- JSON -->
-
-<!-- 
-                    <script>
-                            // var exam = new Object();
-
-                            // exam.kor = 30;
-                            // exam.eng = 70;
-                            // exam.math = 80;
-
-                            var exam = {"kor":30, "eng":70, "math":80};
-                            console.log(exam.kor+exam.eng);
+                                var nums = new Array(2,3,"hello", 7);
+                                
                             
-                            var ar = [3,4,5,6,exam,[7,8,9]]; //진행은 0,1,2,3,4,5 이렇게 0부터 나감
-                            console.log(ar[5][1]);    -//> 8 이 출력
-                            console.log(ar[4].math); //-> 80 출력
+                                    console.log(nums); // 2,3,hello,7 출력 
 
-
-                            var notice = {"id":1, "title":"hello"};
-                            console.log(notice.title);    //-> hello 출력
-
-
-                    </script>
- -->
-
-
-
-               <!--  <script>    //eval함수와 JSON 파싱하기
-
-
-              //파싱(parsing)이란?
-             // 간단하게 말하면 컴퓨터 분야에서 JSON, XML, HTML 등으로 구성된 데이터를 분석하여 내가 원하는 부분만 추출하고자 하는 것을 말합니다.
-
-
-                    var data =   '[\
-                                  {"co":0.6,"so2":0.004,"o3":0.02,"no2":0.024,"pm10":39,"msrdt_de":"20210127","pm25":24,"msrste_nm":"강남구"},\
-                                 {"co":1,"so2":0.003,"o3":0.016,"no2":0.032,"pm10":52,"msrdt_de":"20210127","pm25":22,"msrste_nm":"강남대로"},\
-                                {"co":0.6,"so2":0.003,"o3":0.018,"no2":0.028,"pm10":47,"msrdt_de":"20210127","pm25":29,"msrste_nm":"강동구"}\
-                                    ]';
-
-                                    
-                                    console.log(data[0].co);    //->undefined
-                                    
-                                    //1.
-                                    var a = 30;
-                                     console.log(a); //->30
-                                   
-                                   //2.
-                                     'var b = 30';
-                                    // console.log(b); //-b는 정의 되지 않았기에 오류가 나온다.
-                                
-                                
-                                    //3.  위와 같이 문자열로 처리된것을 실행하기 위한 것이 <eval>
-                                     eval('var b = 30;');
-                                     console.log(b); //->30
-                   
-                   
-                      //돌아와서 위의 var data를 실행시켜보자.
-
-                    eval("var ar = " +data+";"); 
-                    console.log(ar[0].co); //-> 0.6
-
-
-
-                </script> -->
-
-<!-- 
-                <script>   //JSON파서를 이용한 파싱
-
-
-                    //1.
-                      var data = {id:1, title:"aaa"};
-                        console.log(data.title); //-> aaa
-                    
-                    //2.
-                        var data = {"n id":2, title:"bbb"};
-                        console.log(data["n id"]);  //->2
-                       
-                       
-                    //3.  
-                        var data = JSON.parse('{"id":3, "title":"ccc"}');  //parse 사용시 키값에 꼭 큰따옴표 처리해야함.
-                        console.log(data.title);  //->ccc
-
-                    //4.
-                        var data2 = {id:2, title:"bbb"};
-                        var json = JSON.stringify(data2);  //stringify는 3번 형태처럼 키 값에 따옴표 처리를  해준다 
-                        alert(json);
-
-
-
-                </script> -->
-
-
-
-             <!--    <script > //자바 스크립트 연산자 - 기본적인거 제외
-
-
-                        var x = 3;
-                         var y = 3;
-
-
-                         //1. == : 자바스크립트에선 값을 비교 
-                            document.write(x==y);
+                                                /* splice는 삭제 대체 삽입이 가능 */
+                                    nums.splice(2,1,"hoho");  /* 두번째에서 하나를 지우고 "hoho"를 추가  */
                             
-                         //2. === : 주소를 비교.   
-                            document.write(x===y); // => true가 나오게 된다 .  false가 나오기 위해선 var y = new Number(3);으로 해야함
-
-
-                        //3. 
-                        document.write(3.5+"2"); //=>3.52  숫자가 문자화됨
-                        document.write(3.5-"2"); //=> 1.5  문자가 숫자화됨 
-                        document.write(32>"4"); // true
-
-
-
-                </script> -->
-
-
-
-               <!--  <script> //자바스크립트 제어구조
-
-
-                        // 참고 자료 https://developer.mozilla.org/ko/ <= 한국번역으로 쓸시 깨지는 경우 발생하므로 영어로 추천
-
-                        var ar = ["hello", "hi", "greeting"];
-                        //for(var i = 0; i<ar.length; i++)
-                        for(var i in ar)
-                         { document.write(ar[i]+"<br />");  }
-                         
-                         document.write("=====================<br />");
-                         
-                         var ob = {id:1, title:"GOOD", writeId:"newlec"};
-                         for(var i in ob)
-                          { document.write(ob[i]+"<br />");  }
-                         
+                                    console.log(nums); // 2,3,hoho,7 출력
+                            
+                                    nums.splice(2,0,"haha");  /* 두번째에서 0개를  지우고(지워지는것이 없음) "haha"를 추가  위에서 hoho가 있으므로  hoho가 다음으로 밀리고 두번째에 haha가 들어간다.*/
+                            
+                            
+                                    console.log(nums); // 2, 3, haha ,hoho ,7 출력 
 
 
 
 
 
-
-                </script>
- -->
-
-
-
-
-             <!--    <script> //함수 객체와 표현식
-
-
-                    //1.
-                    var add =  new Function("x,y", "return x+y;");  // => 첫번째 ""는 인자 , 두번째 ""는 구현로직
-                    document.write(add(3,4)); // => 7
-
-
-                    document.write("<br />=====================<br />");
-
-
-                    //2.  이 방법을 제일 많이 씀
-                    var add =  function(a,b) {
-
-                        return a+b;
-                    };
-                    document.write(add(10,10)); // =>20
-
-                    document.write("<br />=====================<br />");
-
-                    //3.  
-                    function add(c,d){
-                        return c+d;
-                    }
-                    document.write(add(30,40));  // =>70
+                </script>  -->
 
 
 
 
 
-                </script> -->  
+            <!--            <script>   /* Object객체 */
 
+                                    var exam = new Object();
 
+                                /*  exam["kor"]=100;
+                                    exam["eng"]=40;
+                                    exam["math"]=20;
 
-             <!--    <script>  //함수의 가변인자 arguments 콜렉션
-                
-                
-                function add(x,y){
+                                    alert(exam["kor"]);
+        */
 
-                    alert(arguments.length); //6개가 전달 되었다고 나옴.
-                    alert(arguments[5]); //Hello 출력 
-                    
-                    alert(typeof arguments[5]); // String
-                    alert(typeof arguments[0]); // number
-                    
+                                    exam.kor = 30;
+                                    exam.eng = 70;
+                                    exam.math = 80;
 
-                    return x + y;
-                }
-                document.write(add(6,5,5,6,7,"Hello"));
-                
-                
-                
-                
-                </script> -->
+                                    exam.Kor = 20; /* 잘보면 k가 대문자다  */
+                                    console.log(exam.kor+exam.eng);
 
 
 
 
+                        </script> -->     <!-- JSON -->
 
-              <!--   <script>   //변수의 가시영역과 global 객체 그리고 전역변수
+        <!-- 
+                            <script>
+                                    // var exam = new Object();
 
-                    //1.
-                        var a = 1;
-                        alert(a); // => 1출력
+                                    // exam.kor = 30;
+                                    // exam.eng = 70;
+                                    // exam.math = 80;
+
+                                    var exam = {"kor":30, "eng":70, "math":80};
+                                    console.log(exam.kor+exam.eng);
+                                    
+                                    var ar = [3,4,5,6,exam,[7,8,9]]; //진행은 0,1,2,3,4,5 이렇게 0부터 나감
+                                    console.log(ar[5][1]);    -//> 8 이 출력
+                                    console.log(ar[4].math); //-> 80 출력
+
+
+                                    var notice = {"id":1, "title":"hello"};
+                                    console.log(notice.title);    //-> hello 출력
+
+
+                            </script>
+        -->
+
+
+
+                    <!--  <script>    //eval함수와 JSON 파싱하기
+
+
+                    //파싱(parsing)이란?
+                    // 간단하게 말하면 컴퓨터 분야에서 JSON, XML, HTML 등으로 구성된 데이터를 분석하여 내가 원하는 부분만 추출하고자 하는 것을 말합니다.
+
+
+                            var data =   '[\
+                                        {"co":0.6,"so2":0.004,"o3":0.02,"no2":0.024,"pm10":39,"msrdt_de":"20210127","pm25":24,"msrste_nm":"강남구"},\
+                                        {"co":1,"so2":0.003,"o3":0.016,"no2":0.032,"pm10":52,"msrdt_de":"20210127","pm25":22,"msrste_nm":"강남대로"},\
+                                        {"co":0.6,"so2":0.003,"o3":0.018,"no2":0.028,"pm10":47,"msrdt_de":"20210127","pm25":29,"msrste_nm":"강동구"}\
+                                            ]';
+
+                                            
+                                            console.log(data[0].co);    //->undefined
+                                            
+                                            //1.
+                                            var a = 30;
+                                            console.log(a); //->30
+                                        
+                                        //2.
+                                            'var b = 30';
+                                            // console.log(b); //-b는 정의 되지 않았기에 오류가 나온다.
+                                        
+                                        
+                                            //3.  위와 같이 문자열로 처리된것을 실행하기 위한 것이 <eval>
+                                            eval('var b = 30;');
+                                            console.log(b); //->30
                         
+                        
+                            //돌아와서 위의 var data를 실행시켜보자.
 
-                        //document.write("<br />=====================<br />");
-
-
-                     //2.   
-                        alert(b); // => undefined 출력
-                        var b = 1;
-
-                    //3. 다른 언어들에서는 에러가 뜨지만 자바스크립트에서는 동일한 변수 연속 선언 가능 
-                        var c = 1;
-                        var c = 2;
-                        alert(c); // =>2출력
-
-
-                    //4. 자바스크립트에서는 중괄호가 변수 영역을 나누지 않음 
-                    { 
-                      var d = 7;
-                    }
-                    alert(d); // =>7
-                  
-                    alert(e); // =>undefined
-                    { 
-                      var e = 10;
-                    }
-
-                    //5. 정리 
-
-                    function f1(){
-                        var a = 1;
-                        f2();
-                        function f2(){
-                            var a = 2;
-                            f3();
-                            function f3(){
-                                var a =3; // var를 선언하지 않을 경우 위의 var에서 땡겨서 사용할수 있기에 문제가 발생한다.(ex.closure)
-                            }
-                        }
-
-                    }
-                        f1();   
-                        alert(a) // => 1출력
-
-
-                </script> -->
+                            eval("var ar = " +data+";"); 
+                            console.log(ar[0].co); //-> 0.6
 
 
 
-                <!-- <script> // 클로저(Closure)
-                
-                //1.
-                    function f1() {
+                        </script> -->
 
-                        var a = 1; // 지역변수
+        <!-- 
+                        <script>   //JSON파서를 이용한 파싱
 
-                        return a;
 
-                    }
+                            //1.
+                            var data = {id:1, title:"aaa"};
+                                console.log(data.title); //-> aaa
+                            
+                            //2.
+                                var data = {"n id":2, title:"bbb"};
+                                console.log(data["n id"]);  //->2
+                            
+                            
+                            //3.  
+                                var data = JSON.parse('{"id":3, "title":"ccc"}');  //parse 사용시 키값에 꼭 큰따옴표 처리해야함.
+                                console.log(data.title);  //->ccc
 
-                            var a = f1();
-                            alert(a); // 1출력
-
-                //2.
-                    function f3(){
-                        var a = 7;
-
-                        return function f4(){
-                            return a ; // 위 f3의 var a를 갖고와서씀  그래서 f3이 닫지 못함.
-                        }
-
-                    }
-
-                    var f = f3();
-                    var d = f();
-                    alert(d); //7출력
+                            //4.
+                                var data2 = {id:2, title:"bbb"};
+                                var json = JSON.stringify(data2);  //stringify는 3번 형태처럼 키 값에 따옴표 처리를  해준다 
+                                alert(json);
 
 
 
-                
-                </script> -->
+                        </script> -->
 
 
 
+                    <!--    <script > //자바 스크립트 연산자 - 기본적인거 제외
+
+
+                                var x = 3;
+                                var y = 3;
+
+
+                                //1. == : 자바스크립트에선 값을 비교 
+                                    document.write(x==y);
+                                    
+                                //2. === : 주소를 비교.   
+                                    document.write(x===y); // => true가 나오게 된다 .  false가 나오기 위해선 var y = new Number(3);으로 해야함
+
+
+                                //3. 
+                                document.write(3.5+"2"); //=>3.52  숫자가 문자화됨
+                                document.write(3.5-"2"); //=> 1.5  문자가 숫자화됨 
+                                document.write(32>"4"); // true
 
 
 
-             <!--    <script>  // window 플랫폼을 이용한 대화 parseInt , alert , prompt , comfirm
-
-                    //1.
-                    
-                    var x = prompt("x의 값을 입력하세요 ",0);
-                    var y = prompt("y의 값을 입력하세요 ",0);
-
-                    alert(x+y);  // 문자(열) 로 넘겨 받기에 계산이 되지 않고 ex) 34 이런식의 문자가 출력
-                    
-                    
-                    //2. 위의 문제를 해결 하기 위해 parseInt 사용.
-
-                    var a = prompt("a의 값을 입력하세요 ",0);
-                    var b = prompt("b의 값을 입력하세요 ",0);
-
-                     a = parseInt(a);
-                     b = parseInt(b);
-
-
-                    alert(a+b);  
-
-
-                    //3. 문자형태를 parseInt 할 경우 
-
-                    v= parseInt("abc"); 
-                    alert(v); // NaN  => Not a Number 출력 
+                        </script> -->
 
 
 
-                    //4. 숫자+문자 형태를 parseInt 할 경우 
-
-                    H = parseInt("12ABC");
-                    alert(H); // 12 출력  뒤의 ABC를 자동 탈락 시킴 substring효과 
+                    <!--  <script> //자바스크립트 제어구조
 
 
-                    //5. confirm 사용
+                                // 참고 자료 https://developer.mozilla.org/ko/ <= 한국번역으로 쓸시 깨지는 경우 발생하므로 영어로 추천
 
-                   var answer = confirm("정말로 삭제하실 생각입니까? "); //confirm 확인/취소 제공. 
-                   if(answer){
-                       alert("삭제되었습니다.") // 참 즉, 확인을 선택할경우 alert활성
-                   }
-                   
-
-
-
-                </script> -->
-
-
-
-
-
-                        <!-- <script> // 이벤트 기반의 프로그래밍 
-
-                               // <script> 는 페이지가 읽혀 질때 실행
+                                var ar = ["hello", "hi", "greeting"];
+                                //for(var i = 0; i<ar.length; i++)
+                                for(var i in ar)
+                                { document.write(ar[i]+"<br />");  }
                                 
-                                function printResult()
-                                {
-        
-                                   var x = prompt("x 값을 입력하세요",0);
-                                   var y = prompt("y 값을 입력하세요",0);
+                                document.write("=====================<br />");
+                                
+                                var ob = {id:1, title:"GOOD", writeId:"newlec"};
+                                for(var i in ob)
+                                { document.write(ob[i]+"<br />");  }
+                                
 
-                                    x = parseInt(x);
-                                    y = parseInt(y);
 
-                                  alert(x+y);
-                                }
+
+
+
+
                         </script>
-                
-                          //<input onXXX=""/> 이벤트가 발생 할 때 실행 //)<br/><br/>
-                   //1.
-                   <input type ="button" value="클릭"  onclick="printResult();" />   <br/><br/>
-
-                   //2.
-                   <input type ="button" value="클릭" onclick="alert('안녕하세요!');"/> <br/><br/>
-
-                   //3.
-                   <span onclick="alert('Hello');">스팬입니다.</span>  //=> 글자를 클릭하면 됨
-                  -->
+        -->
 
 
 
 
+                    <!--    <script> //함수 객체와 표현식
 
-                <!-- <script> // 문서의 엘리먼트 객체 이용하기  위의 강의의 연계  
 
-                                //1.
-                                        function printResult1()
-                                {
-        
-                                   var x = prompt("x 값을 입력하세요",0);
-                                   var y = prompt("y 값을 입력하세요",0);
+                            //1.
+                            var add =  new Function("x,y", "return x+y;");  // => 첫번째 ""는 인자 , 두번째 ""는 구현로직
+                            document.write(add(3,4)); // => 7
 
-                                    x = parseInt(x);
-                                    y = parseInt(y);
-                               
-                                btnPrint1.value =x+y;
-                                }
-                                //2.
-                                        function printResult2()
-                                {
-                                    
-                                   var x = prompt("x 값을 입력하세요",0);
-                                   var y = prompt("y 값을 입력하세요",0);
 
-                                        x = parseInt(x);
-                                        y = parseInt(y);
+                            document.write("<br />=====================<br />");
 
-                                         btnPrint2.value = x+y;
-                                }
-                                    btnPrint2.onclick = printResult2; //=> function값을 넘길때는 괄호를 뺀다!
-                                //3.
-                                        function printResult3()
-                                {
-        
-                                   var x = prompt("x 값을 입력하세요",0);
-                                   var y = prompt("y 값을 입력하세요",0);
 
-                                    x = parseInt(x);
-                                    y = parseInt(y);
+                            //2.  이 방법을 제일 많이 씀
+                            var add =  function(a,b) {
 
-                                span.innerText = x+y; // span형태는 input 타입과 다르게 value라는 속성이 없다.
-                                }
+                                return a+b;
+                            };
+                            document.write(add(10,10)); // =>20
 
-                                //4.
-                                        function printResult4()
-                                {
-        
-                                    btnPrint4.type="text";
-                              }
-                </script>
-                      //<input onXXX=""/> 이벤트가 발생 할 때 실행 //<br/><br/> 
-                     //////주의할점은 id값이 똑같으면 오류 발생//////////<br/><br/><br/><br/>
-                    //1. 밑에 btnPrint 라는 버튼에 결과값이 박힌다. <br/><br/>
-                    <input type ="button" value="클릭"  onclick="printResult1();" id="btnPrint1" />   <br/><br/>
-                   
-                    //2. 1번을 좀 더 간소화 하는 방법 하지만 오류가 난다 이유는  btnPrint2.onclick = printResult2; 구문이 위에서 아래로 먼저 읽히면서 실행되기에 btnPrint2 is not defined을 발생 해결은 input구문이 스크립트보다 위에 있어야한다. <br/><br/>
-                    <input type ="button" value="클릭"  id="btnPrint2" />   <br/><br/>
-                    
-                    //3. printResult2와 연계하여 클릭 후 값 입력이 끝나면 글자가 결과값으로 변한다.<br/><br/>
-                    <input type ="button" value="클릭"  onclick="printResult3();" id="btnPrint3" />   <br/><br/>
-                    <span id="span" onclick="alert('Hello');">스팬입니다.</span>  //=> 글자를 클릭하면 Hello가 출력됨<br/><br/>
+                            document.write("<br />=====================<br />");
 
-                    //4. 함수설정으로인해  버튼의 타입 자체가 바뀌게 된다. <br/><br/>
-                    <input type ="button" value="클릭"  onclick="printResult4();" id="btnPrint4" />   <br/><br/> -->
+                            //3.  
+                            function add(c,d){
+                                return c+d;
+                            }
+                            document.write(add(30,40));  // =>70
 
 
 
 
 
-
-
-                            <!-- <script> // 코드 초기화와 엘리먼트 객체 선택하기  전 강의에서 2번에서 실행 순서로 인한 오류 문제 해결 하는 법
-
-                                        function printResult2()
-                                {
-                                    
-                                    var btnPrint2 = document.getElementById('btn-Print2');
-                                    
-                                    var x = prompt("x 값을 입력하세요",0);
-                                    var y = prompt("y 값을 입력하세요",0);
-                                    
-                                    x = parseInt(x);
-                                    y = parseInt(y);
-                                    
-                                    btnPrint2.value = x+y;
-                                }
-                                function init(){
-                                     var btnPrint2 = document.getElementById('btn-Print2'); // 위에도 썼는데 밑에 두번쓰는 것이 불편하다고  init에서 초기화 한후 전역 변수(var btnPrnt2=null)로 빼서 쓰는 것은 위험한짓.
-                                    btnPrint2.onclick = printResult2; //=> function값을 넘길때는 괄호를 뺀다!
-                                 }
-
-                                 window.onload =init;//=> function값을 넘길때는 괄호를 뺀다! | window가 로드완료되면 init을 호출해달라
-                             </script>
-                             밑에 btnPrint 라는 버튼에 결과값이 박힌다. <br/><br/>
-                                    <input type ="button" value="클릭"  id="btn-Print2" />   <br/><br/> -->
+                        </script> -->  
 
 
 
-                             <!-- <script> //스크립트 코드의 지역화   전 강의했던것을 간소화 하기 
+                    <!--    <script>  //함수의 가변인자 arguments 콜렉션
+                        
+                        
+                        function add(x,y){
 
-                                 
-                                window.onload = function (){
-                                     var btnPrint = document.getElementById('btn-Print'); 
-                                   
-                                            var add =function(x,y){ // 이런식으로 안쪽에 추가 할 수도 있다. (지역화 시킴)
-                                                    return x + y;
-                                            };
-
-
-                                     btnPrint.onclick =  function ()  { //익명함수를 대입함. 이벤트 연계
-                                    
-                                    //var btnPrint = document.getElementById('btn-Print'); //위에서 준비했기에 또 따로 준비 할 필요가 없다.
-                                    
-                                    var x = prompt("x 값을 입력하세요",0);
-                                    var y = prompt("y 값을 입력하세요",0);
-                                    
-                                    x = parseInt(x);
-                                    y = parseInt(y);
-                                    
-                                    btnPrint.value = x+y;
-                                     };
-                                 }
-
-                                     </script>
-                                         밑에 btnPrint 라는 버튼에 결과값이 박힌다. <br/><br/>
-                                        <input type ="button" value="클릭"  id="btn-Print" />   <br/><br/> --> 
-
-
-
-
-               <!--  <script src="index.js"> </script>   // 코드분리와 이벤트 바인딩 방법 두가지  - 전 강의 코드 사용 + index.js연계  
+                            alert(arguments.length); //6개가 전달 되었다고 나옴.
+                            alert(arguments[5]); //Hello 출력 
                             
-                <script src="test.js"> </script>   스크립트는 단일 태그로 사용못한다.스크립트의 실행순서는 위에거부터 아래로 
+                            alert(typeof arguments[5]); // String
+                            alert(typeof arguments[0]); // number
+                            
 
-                          밑에 btnPrint 라는 버튼에 결과값이 박힌다. <br/><br/>
-                         <input type ="button" value="클릭"  id="btn-Print" />   <br/><br/> -->
-
-
-
-                         
- 
-
-
-
-
-
+                            return x + y;
+                        }
+                        document.write(add(6,5,5,6,7,"Hello"));
+                        
+                        
+                        
+                        
+                        </script> -->
 
 
 
 
 
+                    <!--   <script>   //변수의 가시영역과 global 객체 그리고 전역변수
+
+                            //1.
+                                var a = 1;
+                                alert(a); // => 1출력
+                                
+
+                                //document.write("<br />=====================<br />");
 
 
-</body>
-</html>
+                            //2.   
+                                alert(b); // => undefined 출력
+                                var b = 1;
+
+                            //3. 다른 언어들에서는 에러가 뜨지만 자바스크립트에서는 동일한 변수 연속 선언 가능 
+                                var c = 1;
+                                var c = 2;
+                                alert(c); // =>2출력
+
+
+                            //4. 자바스크립트에서는 중괄호가 변수 영역을 나누지 않음 
+                            { 
+                            var d = 7;
+                            }
+                            alert(d); // =>7
+                        
+                            alert(e); // =>undefined
+                            { 
+                            var e = 10;
+                            }
+
+                            //5. 정리 
+
+                            function f1(){
+                                var a = 1;
+                                f2();
+                                function f2(){
+                                    var a = 2;
+                                    f3();
+                                    function f3(){
+                                        var a =3; // var를 선언하지 않을 경우 위의 var에서 땡겨서 사용할수 있기에 문제가 발생한다.(ex.closure)
+                                    }
+                                }
+
+                            }
+                                f1();   
+                                alert(a) // => 1출력
+
+
+                        </script> -->
+
+
+
+                        <!-- <script> // 클로저(Closure)
+                        
+                        //1.
+                            function f1() {
+
+                                var a = 1; // 지역변수
+
+                                return a;
+
+                            }
+
+                                    var a = f1();
+                                    alert(a); // 1출력
+
+                        //2.
+                            function f3(){
+                                var a = 7;
+
+                                return function f4(){
+                                    return a ; // 위 f3의 var a를 갖고와서씀  그래서 f3이 닫지 못함.
+                                }
+
+                            }
+
+                            var f = f3();
+                            var d = f();
+                            alert(d); //7출력
+
+
+
+                        
+                        </script> -->
+
+
+
+
+
+
+                    <!--    <script>  // window 플랫폼을 이용한 대화 parseInt , alert , prompt , comfirm
+
+                            //1.
+                            
+                            var x = prompt("x의 값을 입력하세요 ",0);
+                            var y = prompt("y의 값을 입력하세요 ",0);
+
+                            alert(x+y);  // 문자(열) 로 넘겨 받기에 계산이 되지 않고 ex) 34 이런식의 문자가 출력
+                            
+                            
+                            //2. 위의 문제를 해결 하기 위해 parseInt 사용.
+
+                            var a = prompt("a의 값을 입력하세요 ",0);
+                            var b = prompt("b의 값을 입력하세요 ",0);
+
+                            a = parseInt(a);
+                            b = parseInt(b);
+
+
+                            alert(a+b);  
+
+
+                            //3. 문자형태를 parseInt 할 경우 
+
+                            v= parseInt("abc"); 
+                            alert(v); // NaN  => Not a Number 출력 
+
+
+
+                            //4. 숫자+문자 형태를 parseInt 할 경우 
+
+                            H = parseInt("12ABC");
+                            alert(H); // 12 출력  뒤의 ABC를 자동 탈락 시킴 substring효과 
+
+
+                            //5. confirm 사용
+
+                        var answer = confirm("정말로 삭제하실 생각입니까? "); //confirm 확인/취소 제공. 
+                        if(answer){
+                            alert("삭제되었습니다.") // 참 즉, 확인을 선택할경우 alert활성
+                        }
+                        
+
+
+
+                        </script> -->
+
+
+
+
+
+                                <!-- <script> // 이벤트 기반의 프로그래밍 
+
+                                    // <script> 는 페이지가 읽혀 질때 실행
+                                        
+                                        function printResult()
+                                        {
+                
+                                        var x = prompt("x 값을 입력하세요",0);
+                                        var y = prompt("y 값을 입력하세요",0);
+
+                                            x = parseInt(x);
+                                            y = parseInt(y);
+
+                                        alert(x+y);
+                                        }
+                                </script>
+                        
+                                //<input onXXX=""/> 이벤트가 발생 할 때 실행 //)<br/><br/>
+                        //1.
+                        <input type ="button" value="클릭"  onclick="printResult();" />   <br/><br/>
+
+                        //2.
+                        <input type ="button" value="클릭" onclick="alert('안녕하세요!');"/> <br/><br/>
+
+                        //3.
+                        <span onclick="alert('Hello');">스팬입니다.</span>  //=> 글자를 클릭하면 됨
+                        -->
+
+
+
+
+
+                        <!-- <script> // 문서의 엘리먼트 객체 이용하기  위의 강의의 연계  
+
+                                        //1.
+                                                function printResult1()
+                                        {
+                
+                                        var x = prompt("x 값을 입력하세요",0);
+                                        var y = prompt("y 값을 입력하세요",0);
+
+                                            x = parseInt(x);
+                                            y = parseInt(y);
+                                    
+                                        btnPrint1.value =x+y;
+                                        }
+                                        //2.
+                                                function printResult2()
+                                        {
+                                            
+                                        var x = prompt("x 값을 입력하세요",0);
+                                        var y = prompt("y 값을 입력하세요",0);
+
+                                                x = parseInt(x);
+                                                y = parseInt(y);
+
+                                                btnPrint2.value = x+y;
+                                        }
+                                            btnPrint2.onclick = printResult2; //=> function값을 넘길때는 괄호를 뺀다!
+                                        //3.
+                                                function printResult3()
+                                        {
+                
+                                        var x = prompt("x 값을 입력하세요",0);
+                                        var y = prompt("y 값을 입력하세요",0);
+
+                                            x = parseInt(x);
+                                            y = parseInt(y);
+
+                                        span.innerText = x+y; // span형태는 input 타입과 다르게 value라는 속성이 없다.
+                                        }
+
+                                        //4.
+                                                function printResult4()
+                                        {
+                
+                                            btnPrint4.type="text";
+                                    }
+                        </script>
+                            //<input onXXX=""/> 이벤트가 발생 할 때 실행 //<br/><br/> 
+                            //////주의할점은 id값이 똑같으면 오류 발생//////////<br/><br/><br/><br/>
+                            //1. 밑에 btnPrint 라는 버튼에 결과값이 박힌다. <br/><br/>
+                            <input type ="button" value="클릭"  onclick="printResult1();" id="btnPrint1" />   <br/><br/>
+                        
+                            //2. 1번을 좀 더 간소화 하는 방법 하지만 오류가 난다 이유는  btnPrint2.onclick = printResult2; 구문이 위에서 아래로 먼저 읽히면서 실행되기에 btnPrint2 is not defined을 발생 해결은 input구문이 스크립트보다 위에 있어야한다. <br/><br/>
+                            <input type ="button" value="클릭"  id="btnPrint2" />   <br/><br/>
+                            
+                            //3. printResult2와 연계하여 클릭 후 값 입력이 끝나면 글자가 결과값으로 변한다.<br/><br/>
+                            <input type ="button" value="클릭"  onclick="printResult3();" id="btnPrint3" />   <br/><br/>
+                            <span id="span" onclick="alert('Hello');">스팬입니다.</span>  //=> 글자를 클릭하면 Hello가 출력됨<br/><br/>
+
+                            //4. 함수설정으로인해  버튼의 타입 자체가 바뀌게 된다. <br/><br/>
+                            <input type ="button" value="클릭"  onclick="printResult4();" id="btnPrint4" />   <br/><br/> -->
+
+
+
+
+
+
+
+                                    <!-- <script> // 코드 초기화와 엘리먼트 객체 선택하기  전 강의에서 2번에서 실행 순서로 인한 오류 문제 해결 하는 법
+
+                                                function printResult2()
+                                        {
+                                            
+                                            var btnPrint2 = document.getElementById('btn-Print2');
+                                            
+                                            var x = prompt("x 값을 입력하세요",0);
+                                            var y = prompt("y 값을 입력하세요",0);
+                                            
+                                            x = parseInt(x);
+                                            y = parseInt(y);
+                                            
+                                            btnPrint2.value = x+y;
+                                        }
+                                        function init(){
+                                            var btnPrint2 = document.getElementById('btn-Print2'); // 위에도 썼는데 밑에 두번쓰는 것이 불편하다고  init에서 초기화 한후 전역 변수(var btnPrnt2=null)로 빼서 쓰는 것은 위험한짓.
+                                            btnPrint2.onclick = printResult2; //=> function값을 넘길때는 괄호를 뺀다!
+                                        }
+
+                                        window.onload =init;//=> function값을 넘길때는 괄호를 뺀다! | window가 로드완료되면 init을 호출해달라
+                                    </script>
+                                    밑에 btnPrint 라는 버튼에 결과값이 박힌다. <br/><br/>
+                                            <input type ="button" value="클릭"  id="btn-Print2" />   <br/><br/> -->
+
+
+
+                                    <!-- <script> //스크립트 코드의 지역화   전 강의했던것을 간소화 하기 
+
+                                        
+                                        window.onload = function (){
+                                            var btnPrint = document.getElementById('btn-Print'); 
+                                        
+                                                    var add =function(x,y){ // 이런식으로 안쪽에 추가 할 수도 있다. (지역화 시킴)
+                                                            return x + y;
+                                                    };
+
+
+                                            btnPrint.onclick =  function ()  { //익명함수를 대입함. 이벤트 연계
+                                            
+                                            //var btnPrint = document.getElementById('btn-Print'); //위에서 준비했기에 또 따로 준비 할 필요가 없다.
+                                            
+                                            var x = prompt("x 값을 입력하세요",0);
+                                            var y = prompt("y 값을 입력하세요",0);
+                                            
+                                            x = parseInt(x);
+                                            y = parseInt(y);
+                                            
+                                            btnPrint.value = x+y;
+                                            };
+                                        }
+
+                                            </script>
+                                                밑에 btnPrint 라는 버튼에 결과값이 박힌다. <br/><br/>
+                                                <input type ="button" value="클릭"  id="btn-Print" />   <br/><br/> --> 
+
+
+
+
+                    <!--  <script src="index.js"> </script>   // 코드분리와 이벤트 바인딩 방법 두가지  - 전 강의 코드 사용 + index.js연계  
+                                    
+                        <script src="test.js"> </script>   스크립트는 단일 태그로 사용못한다.스크립트의 실행순서는 위에거부터 아래로 
+
+                                밑에 btnPrint 라는 버튼에 결과값이 박힌다. <br/><br/>
+                                <input type ="button" value="클릭"  id="btn-Print" />   <br/><br/> -->
+
+
+
+                                
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        </body>
+        </html>

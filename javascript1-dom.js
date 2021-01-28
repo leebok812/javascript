@@ -119,3 +119,33 @@
                         
                         
                         });
+
+
+                        //EX6 : EX6 : 엘리먼트 노드의 속성 변경 예제 - 사진 변경 & CSS속성변경
+                    /* window.onload = function (){ onload의 중복으로 인해 변경 다른사람의 코드를 망가뜨리지 않으려면 addEventListener사용*/  
+                        window.addEventListener("load", function(){
+                            var section6=document.querySelector("#section6"); // .은 클래스 #은 id 
+                        
+                            var srcInput2 = section6.querySelector(".src-input2");// .은 클래스 #은 id 
+                            var imgSelect2 = section6.querySelector(".img-select2");// .은 클래스 #은 id 
+                          
+                          
+                            var changeButton2 = section6.querySelector(".change-button2");// .은 클래스 #은 id 
+                            var img2 = section6.querySelector(".img2");// .은 클래스 #은 id 
+                            var colorInput = section6.querySelector(".color-input");// .은 클래스 #은 id 
+
+
+                                changeButton2.onclick = function(){
+
+                                    img2.src = "images/"+srcInput2.value; // || input창에 직접 써고 변경을 누르면 바꾸는 형식 datalist기능 추가로 옵션선택자와 같은 기능이 되었다.
+                                    //img2.src = "images/"+imgSelect2.value // select optoin 형식으로 선택한것으로 변경하는 형식
+                          
+                          
+                                    //img2.style.border-color = ? <= 자바스크립트에서 - 이 방법은 안됨.
+                                   //첫번째 방법 img2.style["border-color"] = colorInput.value;
+                                    img2.style.borderColor = colorInput.value;//두번째 방법
+                                    console.log(img2.className); //자바스크립트에서는 class라고 명명하면 안됨 className으로 해야함.
+                                };
+                        
+                        
+                        });

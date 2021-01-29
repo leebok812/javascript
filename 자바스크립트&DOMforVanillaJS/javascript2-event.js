@@ -21,6 +21,11 @@
     }); 
 
 
+
+
+       
+
+
     
 //연습문제 1-선택된 레코드 삭제하기:event target
  /* window.onload = function (){ onload의 중복으로 인해 변경 다른사람의 코드를 망가뜨리지 않으려면 addEventListener사용*/  

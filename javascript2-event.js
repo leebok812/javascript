@@ -324,14 +324,17 @@ window.addEventListener("load", function(){
         var top = container4.offsetTop;// 문서의 꼭지점으로부터 얼마만큼에 위치해 있느냐
 
 
+        console.log(left);
+        console.log(top);
+
                         /* //좌표들 예 : e.x, e.y | e.offsetX, e.offsetY | e.clientX, e.pageX ....
                 console.log("(x,y):"+e.x+","+e.y); // 콘솔창에 좌표 보여줌
                 console.log("Client (x,y):"+e.clientX+","+e.clientY); // 화면에 보여지는 기준 
                 console.log("page (x,y):"+e.pageX+","+e.pageY);  // 스크롤이동에 따라 페이지 기준
                 console.log("offset (x,y):"+e.offsetX+","+e.offsetY); // 클릭한 <영역> 좌표 기준 */
 
-                 container4.onmousedown = function(e){
-                    if(e.target.classList.contains("box4")){
+                section10.onmousedown = function(e){ // Mouse Event Capturing은 영역은 무엇으로 설정하느냐에 따라 달라짐 section,document,container...
+                    if(e.target.classList.contains("box4")){ 
 
                         dragging = true;
                         current = e.target; // 움직이는 대상이 박스를 타겟으로 하는게 아니라 current로 옮겨짐
@@ -342,7 +345,7 @@ window.addEventListener("load", function(){
            
                  };
 
-                container4.onmousemove = function(e){
+                 section10.onmousemove = function(e){// Mouse Event Capturing은 영역은 무엇으로 설정하느냐에 따라 달라짐 section,document,container...
 
                     if(!dragging){
                         return;
@@ -358,7 +361,7 @@ window.addEventListener("load", function(){
                         status.innerText="(x,y):("+x+","+y+")";
 
                 };
-                 container4.onmouseup = function(e){
+                section10.onmouseup = function(e){// Mouse Event Capturing은 영역은 무엇으로 설정하느냐에 따라 달라짐 section,document,container...
 
                     dragging = false;
     

@@ -455,6 +455,8 @@
                                             //오름차순
                                             tbodyNode.innerHTML = ""; // 글자 클릭시 생성되지 않게 해주면서 배열 정리 해주는것. 
 
+
+                                            
                                         if(!titleSorted){
                                             notices.sort(function(a,b){
                                                 titleSorted = true; // 이 함수가 실행되면 정렬되었습니다~를 나타냄  
@@ -473,4 +475,4 @@
                                             bindData();
 
                                         };
-                                    });
+                                    });      

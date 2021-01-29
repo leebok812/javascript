@@ -213,6 +213,17 @@ window.addEventListener("load", function(){
         var dragging = false;
         var offset = {x:0, y:0}
 
+
+
+                /* //좌표들 예 : e.x, e.y | e.offsetX, e.offsetY | e.clientX, e.pageX ....
+                console.log("(x,y):"+e.x+","+e.y); // 콘솔창에 좌표 보여줌
+                console.log("Client (x,y):"+e.clientX+","+e.clientY); // 화면에 보여지는 기준 
+                console.log("page (x,y):"+e.pageX+","+e.pageY);  // 스크롤이동에 따라 페이지 기준
+                console.log("offset (x,y):"+e.offsetX+","+e.offsetY); // 클릭한 <영역> 좌표 기준 */
+
+
+
+
                  container2.onmousedown = function(e){
                     if(e.target === box2){
 
@@ -258,6 +269,13 @@ window.addEventListener("load", function(){
         var offset = {x:0, y:0}
         var current = null;
 
+
+                        /* //좌표들 예 : e.x, e.y | e.offsetX, e.offsetY | e.clientX, e.pageX ....
+                console.log("(x,y):"+e.x+","+e.y); // 콘솔창에 좌표 보여줌
+                console.log("Client (x,y):"+e.clientX+","+e.clientY); // 화면에 보여지는 기준 
+                console.log("page (x,y):"+e.pageX+","+e.pageY);  // 스크롤이동에 따라 페이지 기준
+                console.log("offset (x,y):"+e.offsetX+","+e.offsetY); // 클릭한 <영역> 좌표 기준 */
+
                  container3.onmousedown = function(e){
                     if(e.target.classList.contains("box3")){
 
@@ -283,6 +301,64 @@ window.addEventListener("load", function(){
 
                 };
                  container3.onmouseup = function(e){
+
+                    dragging = false;
+    
+                };
+    
+               
+    }); 
+
+
+     //Ex9-박스의 옵셋 영역 좌표 이용하기
+/* window.onload = function (){ onload의 중복으로 인해 변경 다른사람의 코드를 망가뜨리지 않으려면 addEventListener사용*/  
+    window.addEventListener("load", function(){
+    
+        var section10 = document.querySelector("#section10");
+        var container4 = section10.querySelector(".container4");
+        var status= section10.querySelector(".status");
+        var dragging = false;
+        var offset = {x:0, y:0}
+        var current = null;
+        var left  = container4.offsetLeft; // 문서의 꼭지점으로부터 얼마만큼에 위치해 있느냐
+        var top = container4.offsetTop;// 문서의 꼭지점으로부터 얼마만큼에 위치해 있느냐
+
+
+                        /* //좌표들 예 : e.x, e.y | e.offsetX, e.offsetY | e.clientX, e.pageX ....
+                console.log("(x,y):"+e.x+","+e.y); // 콘솔창에 좌표 보여줌
+                console.log("Client (x,y):"+e.clientX+","+e.clientY); // 화면에 보여지는 기준 
+                console.log("page (x,y):"+e.pageX+","+e.pageY);  // 스크롤이동에 따라 페이지 기준
+                console.log("offset (x,y):"+e.offsetX+","+e.offsetY); // 클릭한 <영역> 좌표 기준 */
+
+                 container4.onmousedown = function(e){
+                    if(e.target.classList.contains("box4")){
+
+                        dragging = true;
+                        current = e.target; // 움직이는 대상이 박스를 타겟으로 하는게 아니라 current로 옮겨짐
+                        offset.x =  e.offsetX;
+                        offset.y =  e.offsetY;
+                    
+                    }
+           
+                 };
+
+                container4.onmousemove = function(e){
+
+                    if(!dragging){
+                        return;
+                    }
+                    
+
+                    var x = e.pageX-offset.x -left; //페이지 기반으로 하되 마우스 드래그 위치좌표 유지를 위한(offset.x)와 컨테이너의 위치좌표(left)를 빼면 완성!
+                    var y = e.pageY-offset.y -top;//페이지 기반으로 하되 마우스 드래그 위치좌표 유지를 위한(offset.x)와 컨테이너의 위치좌표(top)를 빼면 완성!
+
+                    current.style.left = x+"px";
+                    current.style.top = y+"px";
+
+                        status.innerText="(x,y):("+x+","+y+")";
+
+                };
+                 container4.onmouseup = function(e){
 
                     dragging = false;
     

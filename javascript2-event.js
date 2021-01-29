@@ -175,3 +175,25 @@ window.addEventListener("load", function(){
                 };
 
             }); 
+
+
+            //Ex6-마우스 좌표#1 - 클릭 위치에 박스 옮기기
+/* window.onload = function (){ onload의 중복으로 인해 변경 다른사람의 코드를 망가뜨리지 않으려면 addEventListener사용*/  
+    window.addEventListener("load", function(){
+    
+        var section7 = document.querySelector("#section7");
+        var container = section7.querySelector(".container");
+        var box = section7.querySelector(".box");
+
+    container.onclick = function(e){
+
+        //좌표들 예 : e.x, e.y | e.offsetX, e.offsetY | e.clientX, e.pageX ....
+            console.log("(x,y):"+e.x+","+e.y); // 콘솔창에 좌표 보여줌
+            box.style.position ="absolute";
+
+            box.style.left = e.x+"px";
+            box.style.top = e.y+"px";
+
+    };
+    
+    }); 

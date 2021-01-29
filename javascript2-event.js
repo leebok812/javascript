@@ -177,23 +177,71 @@ window.addEventListener("load", function(){
             }); 
 
 
-            //Ex6-마우스 좌표#1 - 클릭 위치에 박스 옮기기
+            //Ex6--마우스 이벤트 객체 - 클릭 위치에 박스 옮기기
 /* window.onload = function (){ onload의 중복으로 인해 변경 다른사람의 코드를 망가뜨리지 않으려면 addEventListener사용*/  
     window.addEventListener("load", function(){
     
         var section7 = document.querySelector("#section7");
-        var container = section7.querySelector(".container");
-        var box = section7.querySelector(".box");
+        var container1 = section7.querySelector(".container1");
+        var box1 = section7.querySelector(".box1");
 
-    container.onclick = function(e){
+    container1.onclick = function(e){
 
         //좌표들 예 : e.x, e.y | e.offsetX, e.offsetY | e.clientX, e.pageX ....
             console.log("(x,y):"+e.x+","+e.y); // 콘솔창에 좌표 보여줌
-            box.style.position ="absolute";
-
-            box.style.left = e.x+"px";
-            box.style.top = e.y+"px";
+            console.log("Client (x,y):"+e.clientX+","+e.clientY); // 화면에 보여지는 기준 
+            console.log("page (x,y):"+e.pageX+","+e.pageY);  // 스크롤이동에 따라 페이지 기준
+            console.log("offset (x,y):"+e.offsetX+","+e.offsetY); // 클릭한 <영역> 좌표 기준
+       
+       
+            box1.style.position ="absolute";
+            box1.style.left = e.pageX+"px";
+            box1.style.top = e.pageY+"px";
 
     };
     
+    }); 
+
+
+      //Ex7-마우스 이벤트 객체-드래그 방식으로 박스 옮기기
+/* window.onload = function (){ onload의 중복으로 인해 변경 다른사람의 코드를 망가뜨리지 않으려면 addEventListener사용*/  
+    window.addEventListener("load", function(){
+    
+        var section8 = document.querySelector("#section8");
+        var container2 = section8.querySelector(".container2");
+        var box2 = section8.querySelector(".box2");
+        var dragging = false;
+        var offset = {x:0, y:0}
+
+                 container2.onmousedown = function(e){
+                    if(e.target === box2){
+
+                        dragging = true;
+                    }
+       
+    
+    
+                 };
+
+                container2.onmousemove = function(e){
+
+                    if(!dragging){
+                        return;
+                    }
+                    box2.style.left = e.pageX-offset.x+"px";
+                     box2.style.top = e.pageY-offset.y+"px";
+
+
+                };
+                 container2.onmouseup = function(e){
+
+                    dragging = false;
+    
+                };
+    
+                    box2.onmousedown = function(e){
+                      offset.x =  e.offsetX;
+                      offset.y =  e.offsetY;
+
+                    }
     }); 

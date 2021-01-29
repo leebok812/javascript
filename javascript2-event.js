@@ -245,3 +245,48 @@ window.addEventListener("load", function(){
 
                     }
     }); 
+
+
+          //Ex8-여러 개의 박스 드래그 방식으로 옮기기
+/* window.onload = function (){ onload의 중복으로 인해 변경 다른사람의 코드를 망가뜨리지 않으려면 addEventListener사용*/  
+    window.addEventListener("load", function(){
+    
+        var section9 = document.querySelector("#section9");
+        var container3 = section9.querySelector(".container3");
+        var box3 = section9.querySelector(".box3");
+        var dragging = false;
+        var offset = {x:0, y:0}
+        var current = null;
+
+                 container3.onmousedown = function(e){
+                    if(e.target.classList.contains("box3")){
+
+                        dragging = true;
+                        current = e.target; // 움직이는 대상이 박스를 타겟으로 하는게 아니라 current로 옮겨짐
+                        offset.x =  e.offsetX;
+                        offset.y =  e.offsetY;
+                    
+                    }
+       
+    
+    
+                 };
+
+                container3.onmousemove = function(e){
+
+                    if(!dragging){
+                        return;
+                    }
+                    current.style.left = e.pageX-offset.x+"px";
+                    current.style.top = e.pageY-offset.y+"px";
+
+
+                };
+                 container3.onmouseup = function(e){
+
+                    dragging = false;
+    
+                };
+    
+               
+    }); 

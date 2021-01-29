@@ -105,6 +105,8 @@ window.addEventListener("load", function(){
 
 
 //Ex4-여러 버튼을 가진 화면에서 이벤트를 처리하는 방법
+/* window.onload = function (){ onload의 중복으로 인해 변경 다른사람의 코드를 망가뜨리지 않으려면 addEventListener사용*/  
+
 window.addEventListener("load", function(){
 
         var section = document.querySelector("#section5");
@@ -115,10 +117,12 @@ window.addEventListener("load", function(){
            var target =  e.target;
 
             e.preventDefault(); //클릭에서 반응하는 어떤 엘리먼트가 있다해도 , 버블링을 타고 오는 어떤 행위든 기본행위를 갖지 않겠다.
-
+            
+            
+            /* 태그로 표현했을때 사용법 
            if(target.nodeName !="A"){
                return;
-           }
+           } */
 
 
 
@@ -128,16 +132,46 @@ window.addEventListener("load", function(){
             tr.style.background ="yellow";
            }
            else if(target.classList.contains("edit-button")){
-               
+                // 수정에 관한 기능 작성해야함  전 강의들 참고
 
            }
            else if(target.classList.contains("del-button")){ 
-           
+                
+                var tr = target.parentElement;  
+            for(; tr.nodeName !="TR"; tr= tr.parentElement);
+            tr.remove();
+
             }
 
 
         };
 
 
-
 }); 
+
+//Ex5-이벤트 트리거
+/* window.onload = function (){ onload의 중복으로 인해 변경 다른사람의 코드를 망가뜨리지 않으려면 addEventListener사용*/  
+    // 글자로 대신하는 게 주 목적 
+            window.addEventListener("load", function(){
+
+
+                var section6 = document.querySelector("#section6");
+                var fileButton =section6.querySelector(".file-button");
+                var fileTriggerButton = section6.querySelector(".file-trigger-button");
+               
+            
+                fileTriggerButton.onclick=function(){
+                    var event = new MouseEvent("click", {
+
+                        'view':window,
+                        'bubbles':true,
+                        'cancelable':true // 버블취소 여부
+
+
+                    });
+
+
+                fileButton.dispatchEvent(event);
+                };
+
+            }); 

@@ -95,10 +95,49 @@ window.addEventListener("load", function(){
 
     addButton.onclick = function(e){
         e.stopPropagation(); // 전파되는것을 막아라 <중요>
-        
+
         var img = document.createElement("img");
         img.src ="images/img1.jpg";
         currentImg.insertAdjacentElement("afterend",img);
     };
+
+}); 
+
+
+//Ex4-여러 버튼을 가진 화면에서 이벤트를 처리하는 방법
+window.addEventListener("load", function(){
+
+        var section = document.querySelector("#section5");
+
+        var tbody = section.querySelector(".notice-list tbody");
+        
+        tbody.onclick = function(e){
+           var target =  e.target;
+
+            e.preventDefault(); //클릭에서 반응하는 어떤 엘리먼트가 있다해도 , 버블링을 타고 오는 어떤 행위든 기본행위를 갖지 않겠다.
+
+           if(target.nodeName !="A"){
+               return;
+           }
+
+
+
+           if(target.classList.contains("sel-button")){
+            var tr = target.parentElement;  
+            for(; tr.nodeName !="TR"; tr= tr.parentElement);
+            tr.style.background ="yellow";
+           }
+           else if(target.classList.contains("edit-button")){
+               
+
+           }
+           else if(target.classList.contains("del-button")){ 
+           
+            }
+
+
+        };
+
+
 
 }); 
